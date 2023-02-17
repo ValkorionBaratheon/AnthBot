@@ -1,14 +1,11 @@
 # AnthBot
- Discord Bot Project
+Anthbot is a Discord bot developed in Python. It is a learning project, but also the recreation of a beloved bot that was shut down by its original creator.
 
-## About
-Anthbot is both a learning project as well as a recreation of a bot I used and loved long ago, but that was shut down by its original creator.
+# Progress
 
-## Progress
-
-### To-Do List
+## To-Do List
 - Modularize the codebase and organize it well so that it can be more easily scaled.
 - Refine the code in ``duel.py`` so that it is more efficient and elegant.
 
-### Accomplished
+## Accomplished
 - Recreated the ``duel`` command that my friends and I used to use quite extensively many years ago. Very fun player-vs-player chat battle.
