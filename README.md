@@ -1,0 +1,2 @@
+# AnthBot
+ Discord Bot Project
