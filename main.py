@@ -15,18 +15,17 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix = PREFIX, intents=intents)
 
-# 
+# Lets us know that the bot is online
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
 
-# Loads all cogs into main.py
+# Loads all command groups (cogs) into main.py
 async def load():
-    for filename in os.listdir('./cogs'):
+    for filename in os.listdir('./commands'):
         if filename.endswith('.py'):
-            await bot.load_extension(f'cogs.{filename[:-3]}')
+            await bot.load_extension(f'commands.{filename[:-3]}')
 
-# 
 async def main():
     await load()
     await bot.start(TOKEN)
