@@ -41,7 +41,6 @@ class Duel(commands.Cog):
     # Simulates a battle between the user who invoked the !challenge command and the specified opponent.
     async def duel(self, ctx, opponent):
         # Initialize health for each player
-        players = [opponent, ctx.author]
         healths = [100, 100]
         round = 1
         over_battle = False
@@ -50,7 +49,7 @@ class Duel(commands.Cog):
         while over_battle == False:
             for x in range(len(healths)):
                 await ctx.send(f"**[Round {round}]**\n\nFighters'current HP: {ctx.author.mention} ({healths[1]}%) - {opponent.mention} ({healths[0]}%)")
-                healths[(x + 1) % len(healths)] = await self.turn(ctx, players[x], players[(x + 1) % len(players)], healths[(x + 1) % len(healths)])
+                healths[(x + 1) % len(healths)] = await self.turn(ctx, opponent, ctx.author, healths[(x + 1) % len(healths)])
                 over_battle = await self.battle_over(healths[1], healths[0])
 
             round +=1
